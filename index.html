@@ -10,12 +10,14 @@
 </head>
 <body>
         <div id="app">
-            <h1>{{ title}}</h1>     
+            <h1>{{ title}}</h1>
             <input type = "text" v-model="title">
         </div>
         <div id="app2">
             <h2>{{ title }}</h2>
-            <input type = "text">
+            <input v-model="title" placeholder="modifiez-moi">
+            <button v-on:click="push">Push</button>
+
         </div>
     </div>
 
