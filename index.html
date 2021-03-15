@@ -7,18 +7,37 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
+    <style>
+        .red {
+            color: #ff0000;
+        }
+    </style>
 </head>
 <body>
         <div id="app">
-            <h1>{{ title}}</h1>
-            <input type = "text" v-model="title">
-        </div>
-        <div id="app2">
-            <h2>{{ title }}</h2>
-            <input v-model="title" placeholder="modifiez-moi">
-            <button v-on:click="push">Push</button>
+            <h1 :class="{ red: active }">{{ title}}</h1>
+            <input type = "text" v-model="title">  <!--Un champ input permettant de mettre à jour le contenu d’une balise h1 -->
 
+            <br><h2 v-if="show">{{ title2 }}</h2>
+            <br><h2 v-if="!show" :class="{ red: active }">"ici"</h2>
+            <input v-model="title2">
+            <button v-on:click="show = !show"> <!--utilisation de v-on-->
+                Envoyé
+            </button>
+
+            <div>
+                <br><input @click="active = !active" type="checkbox" id="scales" name="scales"
+                       checked>
+                <label for="scales">Red Title</label>
+            </div>
+
+            <div>
+                <input v-on:click="show2 = !show2" type="checkbox" id="horns" name="horns">
+                <label for="horns">Image</label>  <!--/Une checkbox pour afficher / masquer une image -->
+            </div>
+            <img v-if="show2" src="https://data.fou-de-puzzle.com/.8/plage-paradisiaque-500-pieces--puzzle.62318-1.fs.jpg">
         </div>
+
     </div>
 
 

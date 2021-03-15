@@ -1,14 +1,12 @@
 var app = new Vue({
     el: '#app',
     data: {
-        title: 'Hello Vue !'
+        title: 'Hello Vue !',
+        title2: 'where are you ?!',
+        show : false,
+        active: true,
+        show2: false,
     }
 })
-var app2 = new Vue({
-    el: '#app2',
-    data: {
-        title: 'where are you ?!'
 
-    }
-})
 //app.message = 'I changed data!';
