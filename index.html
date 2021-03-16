@@ -14,14 +14,16 @@
     </style>
 </head>
 <body>
-        <div id="app">
-            <h1 :class="{ red: active }">{{ title}}</h1>
+        <div id="app">where are you ?!
+            <h1 :class="{ red: active }">{{ title}}</h1><!--utilisation de v-on-->
             <input type = "text" v-model="title">  <!--Un champ input permettant de mettre à jour le contenu d’une balise h1 -->
 
-            <br><h2 v-if="show">{{ title2 }}</h2>
-            <br><h2 v-if="!show" :class="{ red: active }">"ici"</h2>
-            <input v-model="title2">
-            <button v-on:click="show = !show"> <!--utilisation de v-on-->
+            <h2 :class="{ red: active }">{{active2?title2:title3}}</h2>
+            <input v-model="title3">
+            <!--u <br><h2 v-if="show">{{ title2 }}</h2>
+             <br><h2 v-if="!show" :class="{ red: active }">"ici"</h2>
+             <input v-model="title2">-->
+             <button v-on:click="active2=!active2">
                 Envoyé
             </button>
 
